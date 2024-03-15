@@ -14,3 +14,30 @@ def spatial_average(image, neighborhood_size):
     return averaged_image
 
 
+def main():
+
+    image = cv2.imread('image.jpg', cv2.IMREAD_GRAYSCALE)
+
+    if image is None:
+        print("Error: Could not open or find the image.")
+        return
+
+    # Spatial averaging with 3x3 neighborhood
+    averaged_image_3x3 = spatial_average(image, 3)
+
+    # Spatial averaging with 10x10 neighborhood
+    averaged_image_10x10 = spatial_average(image, 10)
+
+    # Spatial averaging with 20x20 neighborhood
+    averaged_image_20x20 = spatial_average(image, 20)
+
+    cv2.imshow('Original Image', image)
+    cv2.imshow('3x3 Averaged Image', averaged_image_3x3)
+    cv2.imshow('10x10 Averaged Image', averaged_image_10x10)
+    cv2.imshow('20x20 Averaged Image', averaged_image_20x20)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+if __name__ == "__main__":
+    main()
