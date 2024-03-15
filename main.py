@@ -16,7 +16,7 @@ def spatial_average(image, neighborhood_size):
 
 def main():
 
-    image = cv2.imread('image.jpg', cv2.IMREAD_GRAYSCALE)
+    image = cv2.imread('input_image.jpg', cv2.IMREAD_GRAYSCALE)
 
     if image is None:
         print("Error: Could not open or find the image.")
